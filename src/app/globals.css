@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: dark;
   --background: 0 0% 5%;
   --foreground: 0 0% 96%;
   --card: 0 0% 8%;
@@ -28,7 +29,59 @@
   --muted-ink: #a4a4a4;
   --line: #303030;
   --lime: #f5f5f5;
+  --subtle-ink: #d0d0d0;
+  --soft-ink: #b6b6b6;
+  --muted-text: #aaa;
+  --quiet-ink: #777;
+  --surface: #111;
+  --control-line: #454545;
+  --contact-surface: #f5f5f5;
+  --contact-ink: #080808;
+  --contact-muted: #686868;
+  --contact-decoration: rgb(0 0 0 / 8%);
+  --footer-surface: #0a0a0a;
+  --header-border: rgb(255 255 255 / 10%);
+  --header-surface: rgb(10 10 10 / 92%);
   --page-width: 1160px;
+}
+
+html.light {
+  color-scheme: light;
+  --background: 0 0% 97%;
+  --foreground: 0 0% 8%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 8%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 8%;
+  --primary: 0 0% 8%;
+  --primary-foreground: 0 0% 97%;
+  --secondary: 0 0% 91%;
+  --secondary-foreground: 0 0% 8%;
+  --muted: 0 0% 91%;
+  --muted-foreground: 0 0% 40%;
+  --accent: 0 0% 8%;
+  --accent-foreground: 0 0% 97%;
+  --border: 0 0% 83%;
+  --input: 0 0% 83%;
+  --ring: 0 0% 35%;
+  --ink: #111;
+  --paper: #f7f7f5;
+  --muted-ink: #666;
+  --line: #d8d8d8;
+  --lime: #111;
+  --subtle-ink: #333;
+  --soft-ink: #555;
+  --muted-text: #666;
+  --quiet-ink: #666;
+  --surface: #eee;
+  --control-line: #c7c7c7;
+  --contact-surface: #111;
+  --contact-ink: #f5f5f5;
+  --contact-muted: #b6b6b6;
+  --contact-decoration: rgb(255 255 255 / 8%);
+  --footer-surface: #eee;
+  --header-border: rgb(0 0 0 / 12%);
+  --header-surface: rgb(247 247 245 / 92%);
 }
 
 @layer base {
@@ -46,11 +99,13 @@
     margin: 0;
     background-color: var(--paper);
     color: var(--ink);
-    font-family:
-      "Arial", "Helvetica Neue", Helvetica, sans-serif;
+    font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition:
+      background-color 220ms ease,
+      color 220ms ease;
   }
 
   a {
@@ -64,8 +119,8 @@
   }
 
   ::selection {
-    background: #f5f5f5;
-    color: #080808;
+    background: var(--ink);
+    color: var(--paper);
   }
 }
 
@@ -78,8 +133,8 @@
   position: sticky;
   z-index: 20;
   top: 0;
-  border-bottom: 1px solid rgb(255 255 255 / 10%);
-  background: rgb(10 10 10 / 92%);
+  border-bottom: 1px solid var(--header-border);
+  background: var(--header-surface);
   backdrop-filter: blur(14px);
 }
 
@@ -158,6 +213,38 @@
   color: var(--paper);
 }
 
+.theme-toggle {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.theme-toggle-sun,
+.theme-toggle-moon {
+  display: none;
+}
+
+html:not(.light) .theme-toggle-sun,
+html.light .theme-toggle-moon {
+  display: block;
+}
+
+.theme-toggle:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -190,12 +277,12 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #dedede;
+  background: var(--subtle-ink);
   box-shadow: 0 0 0 4px rgb(255 255 255 / 12%);
 }
 
 .eyebrow-divider {
-  color: #777;
+  color: var(--quiet-ink);
 }
 
 .hero h1,
@@ -218,14 +305,14 @@
 .section-heading h2 em,
 .about-copy h2 em,
 .contact-inner h2 em {
-  color: #d0d0d0;
+  color: var(--subtle-ink);
   font-weight: 400;
 }
 
 .hero-intro {
   max-width: 440px;
   margin: 27px 0 0;
-  color: #b6b6b6;
+  color: var(--soft-ink);
   font-size: 15px;
   line-height: 1.8;
 }
@@ -263,7 +350,7 @@
 }
 
 .button-dark:hover {
-  background: #dedede;
+  background: var(--subtle-ink);
 }
 
 .text-link {
@@ -291,12 +378,12 @@
   margin: 38px 0 0;
   align-items: center;
   gap: 8px;
-  color: #a4a4a4;
+  color: var(--muted-ink);
   font-size: 11px;
 }
 
 .hero-note svg {
-  color: #d0d0d0;
+  color: var(--subtle-ink);
 }
 
 .hero-portrait {
@@ -392,7 +479,7 @@
 
 .project-section {
   padding: 112px 0 124px;
-  background: #111;
+  background: var(--surface);
 }
 
 .section-heading {
@@ -414,7 +501,7 @@
 .section-aside {
   max-width: 270px;
   margin: 0 0 5px;
-  color: #aaa;
+  color: var(--muted-text);
   font-size: 13px;
   line-height: 1.75;
 }
@@ -487,8 +574,11 @@
 }
 
 .project-date .project-visual {
-  background:
-    radial-gradient(ellipse at 86% 9%, rgb(255 255 255 / 55%), transparent 29%),
+  background: radial-gradient(
+      ellipse at 86% 9%,
+      rgb(255 255 255 / 55%),
+      transparent 29%
+    ),
     #d8e0d9;
 }
 
@@ -556,8 +646,11 @@
 }
 
 .project-twrxa .project-visual {
-  background:
-    radial-gradient(ellipse at 80% 75%, rgb(241 155 139 / 55%), transparent 35%),
+  background: radial-gradient(
+      ellipse at 80% 75%,
+      rgb(241 155 139 / 55%),
+      transparent 35%
+    ),
     #f4cfc5;
 }
 
@@ -639,7 +732,10 @@
   justify-content: center;
   flex-direction: column;
   gap: 17px;
-  background-image: radial-gradient(rgb(29 40 33 / 8%) 0.7px, transparent 0.7px);
+  background-image: radial-gradient(
+    rgb(29 40 33 / 8%) 0.7px,
+    transparent 0.7px
+  );
   background-size: 12px 12px;
 }
 
@@ -715,7 +811,7 @@
 
 .project-category {
   margin: 0 0 8px;
-  color: #aaa;
+  color: var(--muted-text);
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -735,14 +831,14 @@
   height: 38px;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid #454545;
+  border: 1px solid var(--control-line);
   border-radius: 50%;
 }
 
 .project-description {
   max-width: 320px;
   margin: 9px 0 0;
-  color: #aaa;
+  color: var(--muted-text);
   font-size: 12px;
   line-height: 1.75;
 }
@@ -769,9 +865,9 @@
   width: 64px;
   height: 64px;
   place-items: center;
-  border: 1px solid #454545;
+  border: 1px solid var(--control-line);
   border-radius: 50%;
-  color: #dedede;
+  color: var(--subtle-ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 22px;
   font-style: italic;
@@ -790,7 +886,7 @@
 .about-copy > p {
   max-width: 550px;
   margin: 24px 0 0;
-  color: #aaa;
+  color: var(--muted-text);
   font-size: 14px;
   line-height: 1.85;
 }
@@ -814,9 +910,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid #555;
+  border: 1px solid var(--control-line);
   border-radius: 50%;
-  color: #d0d0d0;
+  color: var(--subtle-ink);
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -830,8 +926,8 @@
 
 .contact-section {
   overflow: hidden;
-  background: #f5f5f5;
-  color: #080808;
+  background: var(--contact-surface);
+  color: var(--contact-ink);
 }
 
 .contact-inner {
@@ -842,7 +938,7 @@
 }
 
 .contact-inner > .eyebrow {
-  color: #686868;
+  color: var(--contact-muted);
 }
 
 .contact-inner h2 {
@@ -853,7 +949,7 @@
 }
 
 .contact-inner h2 em {
-  color: #080808;
+  color: var(--contact-ink);
 }
 
 .contact-button {
@@ -866,8 +962,8 @@
   gap: 14px;
   padding: 0 20px;
   border-radius: 999px;
-  background: #080808;
-  color: #fff;
+  background: var(--contact-ink);
+  color: var(--contact-surface);
   font-size: 12px;
   font-weight: 700;
   transition: transform 160ms ease;
@@ -877,7 +973,7 @@
   position: relative;
   z-index: 1;
   margin-left: 18px;
-  color: #555;
+  color: var(--contact-muted);
   font-size: 12px;
 }
 
@@ -885,14 +981,14 @@
   position: absolute;
   top: 26px;
   right: 20px;
-  color: rgb(0 0 0 / 8%);
+  color: var(--contact-decoration);
   font-size: clamp(220px, 34vw, 420px);
   line-height: 1;
 }
 
 .site-footer {
-  background: #0a0a0a;
-  color: #aaa;
+  background: var(--footer-surface);
+  color: var(--muted-text);
 }
 
 .footer-inner {
@@ -902,12 +998,12 @@
   margin-inline: auto;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgb(255 255 255 / 15%);
+  border-top: 1px solid var(--header-border);
   font-size: 10px;
 }
 
 .footer-signature {
-  color: #f5f5f5;
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 14px;
   font-style: italic;
@@ -1200,6 +1296,16 @@
 
   .button {
     padding-inline: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-nav a:not(.nav-contact) {
+    display: none;
+  }
+
+  .header-nav {
+    gap: 12px;
   }
 }
 
