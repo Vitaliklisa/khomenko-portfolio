@@ -36,7 +36,7 @@ const projects = [
     category: "SHARED MEAL DECISIONS",
     description:
       "A group meal-planning app that brings people together to decide where to eat.",
-    url: "https://bitebridge.khomenko.de",
+    url: "https://bitebridge.khomenko.de/",
     image: "/projects/bitebridge.png",
     imageAlt: "BiteBridge group meal decision dashboard",
     number: "03",

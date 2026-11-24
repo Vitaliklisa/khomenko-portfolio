@@ -5,7 +5,7 @@ projects hosted at:
 
 - [Date Dawn](https://datedawn.khomenko.de)
 - [TWRXA](https://twrxa.khomenko.de)
-- [BiteBridge](https://bitebridge.khomenko.de)
+- [BiteBridge](https://bitebridge.khomenko.de/)
 
 ## Run locally
 
