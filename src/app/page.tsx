@@ -7,7 +7,7 @@ import me from "@/assets/me.jpeg";
 export const metadata: Metadata = {
   title: "Vitalii Khomenko — Digital things, made with curiosity",
   description:
-    "I’m Vitalii Khomenko, a software developer who turns curiosity into useful digital products. Explore Date Dawn, TWRXA, and BiteBridge.",
+    "I’m Vitalii Khomenko, a software developer who turns curiosity into useful digital products. Explore Date Dawn, TWRXA, and BiteBrigade.",
 };
 
 const projects = [
@@ -32,13 +32,13 @@ const projects = [
     number: "02",
   },
   {
-    name: "BiteBridge",
+    name: "BiteBrigade",
     category: "SHARED MEAL DECISIONS",
     description:
       "A group meal-planning app that brings people together to decide where to eat.",
-    url: "https://bitebridge.khomenko.de/",
-    image: "/projects/bitebridge.png",
-    imageAlt: "BiteBridge group meal decision dashboard",
+    url: "https://bitebrigade.khomenko.de/",
+    image: "/projects/bitebrigade.png",
+    imageAlt: "BiteBrigade group meal decision dashboard",
     number: "03",
   },
 ];

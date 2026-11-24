@@ -627,11 +627,11 @@
   letter-spacing: 0.16em;
 }
 
-.project-bitebridge .project-visual {
+.project-bitebrigade .project-visual {
   background: #e3dfd2;
 }
 
-.bitebridge-preview {
+.bitebrigade-preview {
   display: flex;
   width: 100%;
   height: 100%;
@@ -643,7 +643,7 @@
   background-size: 12px 12px;
 }
 
-.bitebridge-orbit {
+.bitebrigade-orbit {
   position: relative;
   display: grid;
   width: 154px;
@@ -653,8 +653,8 @@
   border-radius: 50%;
 }
 
-.bitebridge-orbit::before,
-.bitebridge-orbit::after {
+.bitebrigade-orbit::before,
+.bitebrigade-orbit::after {
   position: absolute;
   width: 116px;
   height: 116px;
@@ -663,14 +663,14 @@
   content: "";
 }
 
-.bitebridge-orbit::after {
+.bitebrigade-orbit::after {
   width: 74px;
   height: 74px;
   background: #e6b867;
   border: none;
 }
 
-.bitebridge-center {
+.bitebrigade-center {
   z-index: 1;
   color: #39432f;
   font-family: Georgia, "Times New Roman", serif;
@@ -678,25 +678,25 @@
   font-style: italic;
 }
 
-.bitebridge-spark {
+.bitebrigade-spark {
   position: absolute;
   z-index: 2;
   color: #526649;
 }
 
-.bitebridge-spark-one {
+.bitebrigade-spark-one {
   top: 9px;
   right: 6px;
   font-size: 20px;
 }
 
-.bitebridge-spark-two {
+.bitebrigade-spark-two {
   bottom: 4px;
   left: 14px;
   font-size: 16px;
 }
 
-.bitebridge-label {
+.bitebrigade-label {
   color: #6c7165;
   font-size: 8px;
   font-weight: 700;
