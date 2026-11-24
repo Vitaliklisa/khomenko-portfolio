@@ -1,15 +1,21 @@
 "use client";
 
-import {Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
-export default function ThemeToggle(){
-    const {theme, setTheme} = useTheme();
+export default function ThemeToggle() {
+  const { resolvedTheme, setTheme } = useTheme();
 
-    return <button 
-    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+  return (
+    <button
+      className="theme-toggle"
+      type="button"
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      aria-label="Toggle day and night theme"
+      title="Switch between day and night themes"
     >
-        <Sun size={24} className="absolute transition-all rotate-90 scale-0 dark:rotate-0 dark:scale-100"/>
-        <Moon size={24} className="transition-all rotate-0 scale-100 dark:-rotate-90 dark:scale-0"/>
+      <Sun className="theme-toggle-sun" size={16} aria-hidden="true" />
+      <Moon className="theme-toggle-moon" size={16} aria-hidden="true" />
     </button>
+  );
 }
